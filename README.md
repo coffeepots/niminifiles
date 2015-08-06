@@ -6,9 +6,11 @@ Originally I had used a variant of this with parsecfg, but it doesn't like slopp
 
 Example of use:
 
+```nimrod
 if loadIni(ini, "Config.ini"):
   connection.host = ini.find("database", "hostname")
   connection.database = ini.find("database", "database")
   connection.integratedSecurity = ini.find("database", "winauth") == "1"
 else:
   echo "File not found or no keys found"
+```
